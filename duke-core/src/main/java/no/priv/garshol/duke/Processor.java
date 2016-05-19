@@ -1,26 +1,20 @@
 package no.priv.garshol.duke;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.io.Writer;
-import java.io.PrintWriter;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
+import no.priv.garshol.duke.matchers.AbstractMatchListener;
 import no.priv.garshol.duke.matchers.MatchListener;
 import no.priv.garshol.duke.matchers.PrintMatchListener;
-import no.priv.garshol.duke.matchers.AbstractMatchListener;
-import no.priv.garshol.duke.utils.Utils;
 import no.priv.garshol.duke.utils.DefaultRecordIterator;
+import no.priv.garshol.duke.utils.Utils;
 import org.json.JSONObject;
 import org.slf4j.LoggerFactory;
+
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.*;
+import java.util.Comparator;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * The class that implements the actual deduplication and record linkage logic.
@@ -829,7 +823,9 @@ public class Processor {
     }
 
     obj.put("calculated", retVal);
-    rootLogger.debug(obj.toString());
+    if (rootLogger.isDebugEnabled()) {
+      rootLogger.debug(obj.toString());
+    }
 
     return retVal;
   }
