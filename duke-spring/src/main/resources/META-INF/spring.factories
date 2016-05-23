@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=no.priv.garshol.duke.autoconf.DukeDataSourceAutoconfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=no.priv.garshol.duke.spring.autoconf.DukeDataSourceAutoconfiguration

@@ -1,5 +1,7 @@
 
-package no.priv.garshol.duke;
+package no.priv.garshol.duke.spring;
+
+import no.priv.garshol.duke.DukeException;
 
 import javax.sql.DataSource;
 import java.sql.*;

@@ -1,7 +1,7 @@
-package no.priv.garshol.duke.autoconf;
+package no.priv.garshol.duke.spring.autoconf;
 
-import no.priv.garshol.duke.JDBCComponent;
-import no.priv.garshol.duke.SpringDatasourceEquivalenceClassDatabase;
+import no.priv.garshol.duke.spring.JDBCComponent;
+import no.priv.garshol.duke.spring.SpringDatasourceEquivalenceClassDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

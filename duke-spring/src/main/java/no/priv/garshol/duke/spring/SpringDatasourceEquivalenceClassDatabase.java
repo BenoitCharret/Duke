@@ -1,5 +1,8 @@
 
-package no.priv.garshol.duke;
+package no.priv.garshol.duke.spring;
+
+import no.priv.garshol.duke.DukeException;
+import no.priv.garshol.duke.EquivalenceClassDatabase;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
