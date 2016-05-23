@@ -1,16 +1,12 @@
 
 package no.priv.garshol.duke;
 
+import no.priv.garshol.duke.utils.JDBCUtils;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Properties;
-
-import no.priv.garshol.duke.utils.JDBCUtils;
+import java.util.*;
 
 /**
  * An eq. class database using an RDBMS as backing.
@@ -112,21 +108,21 @@ public class JDBCEquivalenceClassDatabase implements EquivalenceClassDatabase {
   }
 
   private void init() {
-    if (JDBCUtils.queryHasResult(stmt,
-                                 "select * from information_schema.tables " +
-                                 "where table_name = 'CLASSES'"))
-      return; // table exists, no problem
-
-    try {
-      // this table contains the equivalence classes. 'clid' has the
-      // ID of the class, and 'id' the ID of the record that has been
-      // put into the class. each 'id' should occur only once, while
-      // the 'clid's will occur once for each record in the class.
-      stmt.executeUpdate("create table classes (id varchar(100) not null, " +
-                         "                      clid int not null, " +
-                         "                      primary key (id, clid))");
-    } catch (SQLException e) {
-      throw new DukeException(e);
-    }
+//    if (JDBCUtils.queryHasResult(stmt,
+//                                 "select * from information_schema.tables " +
+//                                 "where table_name = 'CLASSES'"))
+//      return; // table exists, no problem
+//
+//    try {
+//      // this table contains the equivalence classes. 'clid' has the
+//      // ID of the class, and 'id' the ID of the record that has been
+//      // put into the class. each 'id' should occur only once, while
+//      // the 'clid's will occur once for each record in the class.
+//      stmt.executeUpdate("create table classes (id varchar(100) not null, " +
+//                         "                      clid int not null, " +
+//                         "                      primary key (id, clid))");
+//    } catch (SQLException e) {
+//      throw new DukeException(e);
+//    }
   }
 }

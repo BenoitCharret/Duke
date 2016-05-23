@@ -712,8 +712,10 @@ public class Processor {
     }
 
     JSONObject obj = new JSONObject();
-    obj.put("fromId", fromId);
-    obj.put("toId", toId);
+    if (rootLogger.isDebugEnabled()) {
+      obj.put("fromId", fromId);
+      obj.put("toId", toId);
+    }
 
     if (config.getWorkingMode() == Configuration.WORKING_MODE.REGRESSION) {
       if (interceptValue == null) {
@@ -780,8 +782,10 @@ public class Processor {
       } else {
         prob = Utils.computeBayes(prob, high);
       }
-      obj.put(propname, ret.raw);
-      obj.put(propname + "Calculated", ret.calculated);
+      if (rootLogger.isDebugEnabled()) {
+        obj.put(propname, ret.raw);
+        obj.put(propname + "Calculated", ret.calculated);
+      }
     }
 
     double retVal = prob;

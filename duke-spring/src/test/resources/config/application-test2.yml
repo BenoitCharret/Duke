@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb2;Mode=Oracle;DB_CLOSE_DELAY=-1
+    platform: h2
+    continue-on-error: true
+    initialize: true

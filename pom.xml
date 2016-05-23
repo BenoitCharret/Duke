@@ -56,6 +56,7 @@ TO PUBLISH SNAPSHOTS
         <module>duke-mongodb</module>
         <module>duke-json</module>
         <module>duke-dist</module>
+        <module>duke-spring</module>
     </modules>
 
     <dependencies>

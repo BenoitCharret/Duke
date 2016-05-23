@@ -1,0 +1,1 @@
+create table if not exists CLASSES (id varchar(100) not null,   clid int not null, primary key (id, clid));
